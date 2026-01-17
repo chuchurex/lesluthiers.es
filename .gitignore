@@ -1,0 +1,48 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist-python/
+build/
+
+# API Keys y configuración sensible
+.env
+config_local.py
+*.key
+
+# Bases de datos locales
+*.db
+*.sqlite
+*.sqlite3
+
+# Archivos temporales
+*.tmp
+*.log
+*.cache
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDEs
+.vscode/
+.idea/
+*.sublime-*
+
+# Archivos de desarrollo
+videos_canal.json
+carlitos_biografia_completa.json
+videos_carlitos.csv
+BASE_DATOS_CARLITOS.md
+
+# NO ignorar el directorio dist (necesario para Cloudflare Pages)
+# dist/

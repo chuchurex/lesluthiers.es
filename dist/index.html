@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Hora de la Nostalgia - Dashboard de Estadísticas</title>
+    <meta name="description" content="Dashboard de estadísticas del canal La Hora de la Nostalgia">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">🎙️ La Hora de la Nostalgia</h1>
+                <p class="tagline">Dashboard de Estadísticas del Canal</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Stats -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-icon">🎬</div>
+                    <div class="hero-stat-content">
+                        <h2 id="total-videos">0</h2>
+                        <p>Videos Publicados</p>
+                    </div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-icon">👁️</div>
+                    <div class="hero-stat-content">
+                        <h2 id="total-vistas">0</h2>
+                        <p>Visualizaciones Totales</p>
+                    </div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-icon">❤️</div>
+                    <div class="hero-stat-content">
+                        <h2 id="total-likes">0</h2>
+                        <p>Me Gusta</p>
+                    </div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-icon">💬</div>
+                    <div class="hero-stat-content">
+                        <h2 id="total-comentarios">0</h2>
+                        <p>Comentarios</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+
+            <!-- Promedios -->
+            <section class="section">
+                <h2 class="section-title">📈 Estadísticas Promedio</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value" id="prom-vistas">0</div>
+                        <div class="stat-label">Vistas por video</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="prom-likes">0</div>
+                        <div class="stat-label">Likes por video</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="prom-comentarios">0</div>
+                        <div class="stat-label">Comentarios por video</div>
+                    </div>
+                    <div class="stat-card highlight">
+                        <div class="stat-value" id="engagement">0%</div>
+                        <div class="stat-label">Engagement Rate</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Top Videos Más Vistos -->
+            <section class="section">
+                <h2 class="section-title">🏆 Top 10 Videos Más Vistos</h2>
+                <div class="ranking" id="top-vistos"></div>
+            </section>
+
+            <!-- Dos columnas: Más Likes y Más Comentados -->
+            <div class="two-columns">
+                <section class="section">
+                    <h2 class="section-title">💙 Top 10 Más Gustados</h2>
+                    <div class="ranking-compact" id="top-likes"></div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title">💬 Top 10 Más Comentados</h2>
+                    <div class="ranking-compact" id="top-comentados"></div>
+                </section>
+            </div>
+
+            <!-- Mejor Engagement -->
+            <section class="section">
+                <h2 class="section-title">🔥 Top 10 Mejor Engagement</h2>
+                <p class="section-subtitle">Videos con mayor proporción de likes respecto a vistas</p>
+                <div class="ranking" id="top-engagement"></div>
+            </section>
+
+            <!-- Evolución por Año -->
+            <section class="section">
+                <h2 class="section-title">📅 Evolución del Canal por Año</h2>
+                <div id="evolucion-años" class="evolucion-grid"></div>
+            </section>
+
+            <!-- Últimos 12 Meses -->
+            <section class="section">
+                <h2 class="section-title">📊 Actividad - Últimos 12 Meses</h2>
+                <div class="chart-container">
+                    <canvas id="chart-meses"></canvas>
+                </div>
+            </section>
+
+            <!-- Temas Más Tratados -->
+            <section class="section">
+                <h2 class="section-title">🏷️ Temas Más Frecuentes</h2>
+                <p class="section-subtitle">Palabras clave que más aparecen en los títulos de los videos</p>
+                <div id="temas-cloud" class="tags-cloud"></div>
+            </section>
+
+            <!-- Videos Recientes -->
+            <section class="section">
+                <h2 class="section-title">🆕 Videos Recientes</h2>
+                <div class="videos-recientes" id="videos-recientes"></div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Dashboard creado con ❤️ para el equipo de La Hora de la Nostalgia</p>
+            <p class="footer-meta">
+                Actualizado: <span id="ultima-actualizacion"></span>
+            </p>
+            <p class="footer-links">
+                <a href="https://www.youtube.com/@LaHoradelaNostalgia" target="_blank">📺 Canal YouTube</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>
