@@ -243,6 +243,69 @@ a:hover
 }
 
 /* ==================================================================
+   WALKING CHARACTER ANIMATION
+   ================================================================== */
+
+.walking-character
+{
+  position: absolute;
+  bottom: 10%;
+  right: -150px;
+  /* Empieza fuera de la pantalla */
+  height: 120px;
+  width: auto;
+  z-index: 10;
+  animation:
+    walk-across 30s linear infinite,
+    wobble 2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Animación de cruce: derecha a izquierda */
+@keyframes walk-across
+{
+  0%
+  {
+    right: -150px;
+  }
+
+  100%
+  {
+    right: calc(100% + 150px);
+  }
+}
+
+/* Animación de balanceo: 5° izquierda y derecha */
+@keyframes wobble
+{
+
+  0%,
+  100%
+  {
+    transform: rotate(0deg);
+  }
+
+  25%
+  {
+    transform: rotate(5deg);
+  }
+
+  75%
+  {
+    transform: rotate(-5deg);
+  }
+}
+
+/* Ocultar en móviles para no distraer */
+@media (max-width: 768px)
+{
+  .walking-character
+  {
+    display: none;
+  }
+}
+
+/* ==================================================================
    ALMANAQUES GRID
    ================================================================== */
 
