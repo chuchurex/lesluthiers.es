@@ -127,27 +127,31 @@ h6
 
 @media (max-width: 768px)
 {
-  .header-logo-left
+  .header-container > h1
   {
-    display: inline-block;
-    height: 32px;
-    width: 32px;
-    object-fit: contain;
-    margin: 0 4px;
+    flex-direction: column;
+    gap: 8px;
   }
 
+  .header-logo-left,
   .header-logo-right
   {
-    display: none;
+    display: block;
+    height: 48px;
+    width: auto;
+    object-fit: contain;
+    margin: 4px 0;
   }
 
   h1
   {
-    font-size: 2rem;
+    font-size: 2.5rem;
+    /* Ajustado para consistencia */
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
   }
 }
 
@@ -843,10 +847,67 @@ a:hover
 @media (min-width: 1420px)
 {
 
-  /* Mostrar texto solo si hay espacio seguro fuera del container de 1200px + 20px extra */
-  .nav-brand span
+  /* DESKTOP GRANDE: Mostrar texto */
+  .nav-brand-left span
   {
     display: block;
+  }
+
+  .nav-brand-right
+  {
+    display: flex;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1419px)
+{
+
+  /* DESKTOP MEDIO: Mostrar texto */
+  .nav-brand-left span
+  {
+    display: block;
+  }
+
+  .nav-brand-right
+  {
+    display: flex;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1023px)
+{
+
+  /* TABLET: Ocultar texto izquierda, Mantener logo derecha */
+  .nav-brand-left span
+  {
+    display: none;
+  }
+
+  .nav-brand-right
+  {
+    display: flex;
+  }
+}
+
+@media (max-width: 768px)
+{
+
+  /* MÓVIL: Mostrar texto izquierda (inline), Ocultar logo derecha */
+  .nav-brand-left span
+  {
+    display: block;
+    font-size: 0.9rem;
+    /* Un poco más chico para que quepa */
+  }
+
+  .nav-brand-left img
+  {
+    /* El logo izquierdo se mantiene visible */
+  }
+
+  .nav-brand-right
+  {
+    display: none;
   }
 }
 
