@@ -862,10 +862,10 @@ a:hover
 @media (min-width: 1024px) and (max-width: 1419px)
 {
 
-  /* DESKTOP MEDIO: Mostrar texto */
+  /* DESKTOP MEDIO: Ocultar texto */
   .nav-brand-left span
   {
-    display: block;
+    display: none;
   }
 
   .nav-brand-right
@@ -892,12 +892,10 @@ a:hover
 @media (max-width: 768px)
 {
 
-  /* MÓVIL: Mostrar texto izquierda (inline), Ocultar logo derecha */
+  /* MÓVIL: Ocultar texto izquierda, Ocultar logo derecha */
   .nav-brand-left span
   {
-    display: block;
-    font-size: 0.9rem;
-    /* Un poco más chico para que quepa */
+    display: none;
   }
 
   .nav-brand-left img
