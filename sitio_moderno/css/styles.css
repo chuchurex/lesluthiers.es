@@ -127,17 +127,18 @@ h6
 
 @media (max-width: 768px)
 {
-  .header-logo-left,
-  .header-logo-right
+  .header-logo-left
   {
     display: inline-block;
     height: 32px;
-    /* Reducir altura para móvil */
     width: 32px;
-    /* Ancho fijo igual para ambos */
     object-fit: contain;
     margin: 0 4px;
-    /* Margen reducido */
+  }
+
+  .header-logo-right
+  {
+    display: none;
   }
 
   h1
@@ -161,6 +162,7 @@ h6
     /* Centrar items del menú */
     gap: var(--space-xs);
     flex-wrap: wrap;
+    padding-top: 20px;
   }
 
   .nav a:not(.nav-brand)
