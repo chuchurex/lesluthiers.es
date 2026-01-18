@@ -289,8 +289,11 @@ a:hover
   transform: translateX(-20px);
   transition: all 0.3s ease;
   position: absolute;
-  left: var(--space-md);
+  left: 1rem;
+  /* Alineado al borde de pantalla */
+  top: 0;
   height: 100%;
+  z-index: 20;
 }
 
 .nav-brand img
@@ -308,16 +311,28 @@ a:hover
   font-size: 1.1rem;
   white-space: nowrap;
   display: none;
-  /* Oculto en móbile por defecto */
 }
 
-@media (min-width: 1024px)
+@media (min-width: 1400px)
 {
+
+  /* Mostrar texto solo si hay espacio seguro fuera del container de 1200px */
   .nav-brand span
   {
     display: block;
   }
 }
+
+@media (min-width: 1024px) and (max-width: 1399px)
+{
+
+  /* En pantallas medianas, solo mostrar Icono para no pisar links */
+  .nav-brand span
+  {
+    display: none;
+  }
+}
+
 
 /* ESTADO SCROLLED: La clase .scrolled se añade con JS */
 .nav.scrolled .nav-brand

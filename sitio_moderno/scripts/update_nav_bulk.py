@@ -21,21 +21,23 @@ def get_header_nav_html(is_root):
 
   <!-- NAVEGACIÓN -->
   <nav class="nav">
-    <div class="nav-container">
-      <!-- BRAND (Oculto inicialmente, aparece al scroll) -->
-      <a href="{prefix}index.html" class="nav-brand">
-         <img src="{prefix}assets/portada/cellato.gif" alt="Logo" class="nav-logo">
-         <span class="nav-title">La página de Les Luthiers de Patrick</span>
-      </a>
+    <!-- BRAND (Pegado a la izquierda, fuera del container) -->
+    <a href="{prefix}index.html" class="nav-brand">
+       <img src="{prefix}assets/portada/cellato.gif" alt="Logo" class="nav-logo">
+       <span class="nav-title">La página de Les Luthiers de Patrick</span>
+    </a>
 
-      <!-- LINKS -->
-      <a href="{prefix}index.html">Inicio</a>
-      <a href="{prefix}grupo/index.html">El Grupo</a>
-      <a href="{prefix}espectaculos/index.html">Espectáculos</a>
-      <a href="{prefix}obras/index.html">Obras</a>
-      <a href="{prefix}multimedia/index.html">Multimedia</a>
-      <a href="{prefix}instrumentos/index.html">Instrumentos</a>
-      <a href="{prefix}personajes/index.html">Personajes</a>
+    <!-- CONTAINER CENTRADO PARA LINKS -->
+    <div class="nav-container">
+      <div class="nav-links">
+        <a href="{prefix}index.html">Inicio</a>
+        <a href="{prefix}grupo/index.html">El Grupo</a>
+        <a href="{prefix}espectaculos/index.html">Espectáculos</a>
+        <a href="{prefix}obras/index.html">Obras</a>
+        <a href="{prefix}multimedia/index.html">Multimedia</a>
+        <a href="{prefix}instrumentos/index.html">Instrumentos</a>
+        <a href="{prefix}personajes/index.html">Personajes</a>
+      </div>
     </div>
   </nav>"""
     return html
