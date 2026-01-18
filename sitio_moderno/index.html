@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La página de Les Luthiers de Patrick</title>
+  <meta name="description" content="El sitio web dedicado a Les Luthiers mantenido por Patrick. Historia, obras, instrumentos y más.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+  <!-- HEADER -->
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-container">
+      <h1>
+        <img src="assets/portada/cellato.gif" alt="Logo Animado" style="height: 48px; vertical-align: middle; margin-right: 12px; filter: invert(1);">
+        La página de Les Luthiers de Patrick
+      </h1>
+      <p>50 años de música, humor y admiración</p>
+    </div>
+  </header>
+
+  <!-- NAVEGACIÓN -->
+  <nav class="nav" id="main-nav">
+    <div class="nav-container">
+      <!-- BRAND (Oculto inicialmente, aparece al scroll) -->
+      <a href="index.html" class="nav-brand">
+        <img src="assets/portada/cellato.gif" alt="Logo" class="nav-logo">
+        <span class="nav-title">La página de Les Luthiers de Patrick</span>
+      </a>
+
+      <!-- LINKS (Derecha) -->
+      <div class="nav-links">
+        <a href="index.html" class="active">Inicio</a>
+        <a href="grupo/index.html">El Grupo</a>
+        <a href="espectaculos/index.html">Espectáculos</a>
+        <a href="obras/index.html">Obras</a>
+        <a href="multimedia/index.html">Multimedia</a>
+        <a href="instrumentos/index.html">Instrumentos</a>
+        <a href="personajes/index.html">Personajes</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main style="width: 100%;">
+
+    <!-- ROW 1: GREEN HERO -->
+    <section class="section-full bg-green text-center">
+      <div class="row-content">
+        <h2 class="detail-title fade-in" style="font-size: 3.5rem; margin-bottom: 0.5rem; color: #0A1F00;">Bienvenidos</h2>
+        <p class="detail-text fade-in" style="font-size: 1.5rem; max-width: 800px; margin: 0 auto; color: #1A3C34;">
+          La página de Les Luthiers de Patrick
+        </p>
+      </div>
+    </section>
+
+    <!-- ROW 2: WHITE BACKGROUND & INDEX.GIF (PORTADA) -->
+    <section class="section-full bg-white text-center" style="padding: 4rem 0;">
+      <div class="row-content">
+        <div class="fade-in" style="display: inline-block;">
+          <!-- Uso de index.gif como elemento central en fondo blanco -->
+          <img src="assets/portada/index.gif" alt="Les Luthiers Portada Original" style="max-width: 100%; height: auto; box-shadow: var(--shadow-lg);">
+        </div>
+        <div class="mt-2 fade-in">
+          <!-- Imágenes decorativas adicionales sutiles -->
+          <img src="assets/portada/cuerda09 - copia.jpg" alt="Detalle" style="height: 60px; margin: 0 10px; opacity: 0.8;">
+          <img src="assets/portada/electronico01.jpg" alt="Detalle" style="height: 60px; margin: 0 10px; opacity: 0.8;">
+        </div>
+      </div>
+    </section>
+
+    <!-- ROW 3: GREEN AUTHOR COLUMN -->
+    <section class="section-full bg-green text-center">
+      <div class="row-content fade-in">
+        <h3 style="margin-bottom: 1.5rem; font-size: 2rem; color: #0A1F00;">La Columna de Patrick</h3>
+        <p class="detail-text" style="max-width: 700px; margin: 0 auto 2rem; color: #1A3C34;">
+          Un espacio dedicado a la reflexión y el análisis de la obra de Les Luthiers.
+        </p>
+        <a href="https://web.archive.org/web/20250714001310/http://lesluthiers.es/" target="_blank" class="btn-primary" style="font-size: 1.2rem; padding: 1.2rem 3rem;">
+          Leer la Columna
+        </a>
+      </div>
+    </section>
+
+    <!-- ROW 4: WHITE GRID & STATS -->
+    <section class="section-full bg-white">
+      <div class="container">
+
+        <!-- Búsqueda -->
+        <div class="search-section">
+          <div class="search-container">
+            <span class="search-icon">🔍</span>
+            <input type="search" id="global-search" class="search-input" placeholder="¿Qué estás buscando? (Obras, integrantes, instrumentos...)" aria-label="Búsqueda global">
+          </div>
+          <div id="search-results"></div>
+        </div>
+
+        <!-- Estadísticas -->
+        <div class="stats-grid" id="stats-container">
+          <!-- Se llena vía JS -->
+        </div>
+
+        <!-- Destacados -->
+        <div class="mb-2">
+          <h3 class="text-center mb-1">Explora el Universo Lutheriano</h3>
+          <div class="grid" id="featured-grid">
+            <!-- JS generará tarjetas destacadas aquí -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p><strong>La página de Les Luthiers de Patrick</strong></p>
+      <p>Un tributo a 50 años de genialidad</p>
+      <p style="margin-top: 1rem; font-size: 0.9rem;">
+        Contenido original © Les Luthiers
+      </p>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="./js/app.js"></script>
+  <script>
+    async function initHome() {
+      const respaldo = await LesLuthiers.cargarRespaldo();
+      if (!respaldo) return;
+
+      LesLuthiers.activarNavegacion();
+      LesLuthiers.initStickyNav(); // Activar observador de Header
+
+      // Generar Estadísticas
+      const stats = [
+        { label: 'Espectáculos', count: Object.keys(respaldo.espectaculos || {}).length },
+        { label: 'Obras', count: Object.values(respaldo.obras || {}).length },
+        { label: 'Instrumentos', count: Object.keys(respaldo.instrumentos || {}).length },
+        { label: 'Integrantes', count: Object.keys(respaldo.grupo || {}).length },
+      ];
+
+      const statsContainer = document.getElementById('stats-container');
+      statsContainer.innerHTML = stats.map(s => `
+        <div class="stat-card fade-in">
+          <div class="stat-number">${s.count}</div>
+          <div class="stat-label">${s.label}</div>
+        </div>
+      `).join('');
+
+      // Generar Destacados (Aleatorio simple)
+      const featured = [];
+      const spectaculos = Object.values(respaldo.espectaculos || {});
+      if (spectaculos.length > 0) featured.push({ ...spectaculos[0], type: 'Espectáculo', link: 'espectaculos/index.html' });
+
+      const integrantes = Object.values(respaldo.grupo || {});
+      if (integrantes.length > 0) featured.push({ ...integrantes[0], type: 'Integrante', link: 'grupo/index.html' });
+
+      const instrumentos = Object.values(respaldo.instrumentos || {});
+      if (instrumentos.length > 0) featured.push({ ...instrumentos[0], type: 'Instrumento', link: 'instrumentos/index.html' });
+
+      const gridInfo = document.getElementById('featured-grid');
+      // ... Renderizado simplificado para demo, idealmente usaríamos LesLuthiers.renderizarGrid si adaptamos los datos
+      gridInfo.innerHTML = featured.map(item => `
+        <a href="${item.link}" class="card fade-in">
+          <div class="card-image-wrapper">
+             <img src="${item.imagen || item.foto_perfil || 'assets/images/placeholder.jpg'}" alt="${item.titulo || item.nombre}" class="card-image" loading="lazy">
+          </div>
+          <div class="card-body">
+            <div class="card-tags"><span class="tag">${item.type}</span></div>
+            <h3 class="card-title">${item.titulo || item.nombre}</h3>
+            <p class="card-text">${item.sinopsis || item.bio_corta || 'Explora más detalles sobre este ítem.'}</p>
+          </div>
+        </a>
+      `).join('');
+    }
+
+    document.addEventListener('DOMContentLoaded', initHome);
+  </script>
+</body>
+
+</html>

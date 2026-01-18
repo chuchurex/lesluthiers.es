@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Espectáculos - Les Luthiers</title>
+  <meta name="description" content="Todos los espectáculos de Les Luthiers desde 1967 hasta 2017. 36 espectáculos que marcaron la historia del humor musical.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+      <!-- HEADER -->
+  <header class="header">
+    <div class="header-container">
+      <h1>
+        <img src="../assets/portada/cellato.gif" alt="Logo Animado" style="height: 48px; vertical-align: middle; margin-right: 12px; filter: invert(1);">
+        La página de Les Luthiers de Patrick
+      </h1>
+      <p>50 años de música, humor y admiración</p>
+    </div>
+  </header>
+
+  <!-- NAVEGACIÓN -->
+  <nav class="nav">
+    <div class="nav-container">
+      <!-- BRAND (Oculto inicialmente, aparece al scroll) -->
+      <a href="../index.html" class="nav-brand">
+         <img src="../assets/portada/cellato.gif" alt="Logo" class="nav-logo">
+         <span class="nav-title">La página de Les Luthiers de Patrick</span>
+      </a>
+
+      <!-- LINKS -->
+      <a href="../index.html">Inicio</a>
+      <a href="../grupo/index.html">El Grupo</a>
+      <a href="../espectaculos/index.html">Espectáculos</a>
+      <a href="../obras/index.html">Obras</a>
+      <a href="../multimedia/index.html">Multimedia</a>
+      <a href="../instrumentos/index.html">Instrumentos</a>
+      <a href="../personajes/index.html">Personajes</a>
+    </div>
+  </nav>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="container">
+    <!-- HEADER DE SECCIÓN -->
+    <div class="detail-hero mb-3">
+      <div class="detail-content">
+        <h2 class="detail-title">🎭 Espectáculos</h2>
+        <p class="detail-text">
+          Desde <strong>1967 hasta 2017</strong>, Les Luthiers creó espectáculos
+          inolvidables que combinaban música de cámara, humor inteligente y
+          actuaciones magistrales.
+        </p>
+        <p class="detail-text">
+          Cada espectáculo fue una obra maestra única, presentada en teatros de
+          toda América Latina y España, deleitando a millones de espectadores.
+        </p>
+      </div>
+    </div>
+
+    <!-- BÚSQUEDA LOCAL -->
+    <section class="search-section">
+      <div class="search-container">
+        <span class="search-icon">🔍</span>
+        <input type="search" id="search-input" class="search-input" placeholder="Buscar espectáculos..." aria-label="Buscar espectáculos">
+      </div>
+      <div id="search-results"></div>
+    </section>
+
+    <!-- CONTADOR -->
+    <div class="mb-2">
+      <h3 class="text-center" id="contador-espectaculos">Cargando...</h3>
+    </div>
+
+    <!-- GRID DE ESPECTÁCULOS -->
+    <div id="espectaculos-container"></div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p><strong>Les Luthiers</strong> • 1967 - 2017</p>
+      <p>50 años de música y humor</p>
+      <p style="margin-top: 1rem; font-size: 0.9rem;">
+        Sitio creado como homenaje • Contenido original © Les Luthiers
+      </p>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="../js/app.js"></script>
+  <script>
+    async function init() {
+      const respaldo = await LesLuthiers.cargarRespaldo('..');
+      if (!respaldo) return;
+
+      LesLuthiers.activarNavegacion();
+      LesLuthiers.initStickyNav();
+
+      // Obtener todos los espectáculos
+      const espectaculos = Object.values(respaldo.espectaculos || {});
+
+      // Actualizar contador
+      document.getElementById('contador-espectaculos').textContent =
+        `${espectaculos.length} Espectáculos`;
+
+      // Renderizar todos los espectáculos
+      LesLuthiers.renderizarGrid(espectaculos, 'Espectáculo', '.', 'espectaculos-container');
+
+      // Búsqueda local
+      const searchInput = document.getElementById('search-input');
+      const searchResults = document.getElementById('search-results');
+
+      searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.trim().toLowerCase();
+
+        if (query.length < 2) {
+          searchResults.classList.remove('active');
+          searchResults.innerHTML = '';
+          document.getElementById('espectaculos-container').style.display = 'block';
+          return;
+        }
+
+        const resultados = espectaculos.filter(esp =>
+          esp.titulo.toLowerCase().includes(query) ||
+          esp.descripcion.toLowerCase().includes(query)
+        );
+
+        if (resultados.length > 0) {
+          document.getElementById('espectaculos-container').style.display = 'none';
+          LesLuthiers.renderizarGrid(resultados, 'Espectáculo', '.', 'search-results');
+          searchResults.classList.add('active');
+        } else {
+          searchResults.innerHTML = `
+            <div class="card">
+              <div class="card-body">
+                <p>No se encontraron espectáculos con "<strong>${query}</strong>"</p>
+              </div>
+            </div>
+          `;
+          searchResults.classList.add('active');
+          document.getElementById('espectaculos-container').style.display = 'none';
+        }
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', init);
+  </script>
+</body>
+
+</html>

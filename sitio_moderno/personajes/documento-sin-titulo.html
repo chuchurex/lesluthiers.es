@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documento sin título - Les Luthiers</title>
+  <meta name="description" content="Personaje: Documento sin título">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+      <!-- HEADER -->
+  <header class="header">
+    <div class="header-container">
+      <h1>
+        <img src="../assets/portada/cellato.gif" alt="Logo Animado" style="height: 48px; vertical-align: middle; margin-right: 12px; filter: invert(1);">
+        La página de Les Luthiers de Patrick
+      </h1>
+      <p>50 años de música, humor y admiración</p>
+    </div>
+  </header>
+
+  <!-- NAVEGACIÓN -->
+  <nav class="nav">
+    <div class="nav-container">
+      <!-- BRAND (Oculto inicialmente, aparece al scroll) -->
+      <a href="../index.html" class="nav-brand">
+         <img src="../assets/portada/cellato.gif" alt="Logo" class="nav-logo">
+         <span class="nav-title">La página de Les Luthiers de Patrick</span>
+      </a>
+
+      <!-- LINKS -->
+      <a href="../index.html">Inicio</a>
+      <a href="../grupo/index.html">El Grupo</a>
+      <a href="../espectaculos/index.html">Espectáculos</a>
+      <a href="../obras/index.html">Obras</a>
+      <a href="../multimedia/index.html">Multimedia</a>
+      <a href="../instrumentos/index.html">Instrumentos</a>
+      <a href="../personajes/index.html">Personajes</a>
+    </div>
+  </nav>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="container">
+    <!-- BREADCRUMB -->
+    <div class="mb-2">
+      <a href="../index.html">Inicio</a> →
+      <a href="../personajes/index.html">Personajes</a> →
+      <strong>Documento sin título</strong>
+    </div>
+
+    <!-- DETALLE -->
+    <article class="detail-hero">
+      
+      <div class="detail-content">
+        <h1 class="detail-title">🎬 Documento sin título</h1>
+
+        <div class="detail-meta">
+          <span class="meta-item">🎬 Personaje</span>
+          
+        </div>
+
+        <div class="detail-text">
+          Documento sin título
+A
+lo largo de la obra de Les Luthiers encontramos muchas historias, a menudo
+pobladas de personajes chocantes, estrafalarios, tiernos, terribles... El
+más representativo de ellos es, sin ninguna duda, Johann Sebastian
+Mastropiero, cuya biografía merece un apartado propio de esta web.
+Pero, aparte de él, merece la pena repasar, aunque sea por encima,
+toda esa multitud de seres, la mayoría inventados expresamente para
+divertirnos. Y son nada menos que 571... Se los puede localizar
+bien por su nombre, mediante la clasificación alfabética,
+bien a través del tipo de personaje: artista, noble, científico,
+etc.
+Esta
+cifra, 571, serían los personajes mencionados en las obras. Estrictamente
+hablando, no todos son creación de Les Luthiers, pues se habla de
+Arquímedes, de Nostradamus, de Pierre Cardin... si eliminamos estos
+personajes y nos quedamos por los que sí han sido ideados por Les
+Luthiers la cifra sigue siendo enorme: ¡466!
+        </div>
+
+        
+      </div>
+    </article>
+
+    <!-- NAVEGACIÓN INFERIOR -->
+    <div class="mt-3 text-center">
+      <a href="../personajes/index.html" style="display: inline-block; padding: 1rem 2rem; background: var(--primary); color: white; border-radius: 8px; font-weight: 600;">
+        ← Volver a Personajes
+      </a>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p><strong>Les Luthiers</strong> • 1967 - 2017</p>
+      <p>50 años de música y humor</p>
+      <p style="margin-top: 1rem; font-size: 0.9rem;">
+        Sitio creado como homenaje • Contenido original © Les Luthiers
+      </p>
+    </div>
+  </footer>
+
+  <script src="../js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      LesLuthiers.activarNavegacion();
+      LesLuthiers.initStickyNav();
+    });
+  </script>
+</body>
+</html>

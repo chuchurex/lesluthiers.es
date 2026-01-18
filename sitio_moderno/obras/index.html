@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Obras Musicales - Les Luthiers</title>
+  <meta name="description" content="Catálogo completo de las obras musicales de Les Luthiers. Letras, historia y curiosidades de cada composición.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+      <!-- HEADER -->
+  <header class="header">
+    <div class="header-container">
+      <h1>
+        <img src="../assets/portada/cellato.gif" alt="Logo Animado" style="height: 48px; vertical-align: middle; margin-right: 12px; filter: invert(1);">
+        La página de Les Luthiers de Patrick
+      </h1>
+      <p>50 años de música, humor y admiración</p>
+    </div>
+  </header>
+
+  <!-- NAVEGACIÓN -->
+  <nav class="nav">
+    <div class="nav-container">
+      <!-- BRAND (Oculto inicialmente, aparece al scroll) -->
+      <a href="../index.html" class="nav-brand">
+         <img src="../assets/portada/cellato.gif" alt="Logo" class="nav-logo">
+         <span class="nav-title">La página de Les Luthiers de Patrick</span>
+      </a>
+
+      <!-- LINKS -->
+      <a href="../index.html">Inicio</a>
+      <a href="../grupo/index.html">El Grupo</a>
+      <a href="../espectaculos/index.html">Espectáculos</a>
+      <a href="../obras/index.html">Obras</a>
+      <a href="../multimedia/index.html">Multimedia</a>
+      <a href="../instrumentos/index.html">Instrumentos</a>
+      <a href="../personajes/index.html">Personajes</a>
+    </div>
+  </nav>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="container">
+    <!-- HEADER DE SECCIÓN -->
+    <div class="detail-hero mb-3">
+      <div class="detail-content">
+        <h2 class="detail-title">🎵 Obras Musicales</h2>
+        <p class="detail-text">
+          El catálogo de obras de Les Luthiers es vasto y variado, abarcando
+          desde parodias de ópera hasta música latinoamericana, pasando por
+          jazz, música clásica y mucho más.
+        </p>
+        <p class="detail-text">
+          Cada obra es una pieza única que combina virtuosismo musical con
+          humor inteligente, creando un estilo inconfundible que los caracterizó
+          durante 50 años.
+        </p>
+      </div>
+    </div>
+
+    <!-- BÚSQUEDA LOCAL -->
+    <section class="search-section">
+      <div class="search-container">
+        <span class="search-icon">🔍</span>
+        <input type="search" id="search-input" class="search-input" placeholder="Buscar obras..." aria-label="Buscar obras">
+      </div>
+      <div id="search-results"></div>
+    </section>
+
+    <!-- CONTADOR -->
+    <div class="mb-2">
+      <h3 class="text-center" id="contador-obras">Cargando...</h3>
+    </div>
+
+    <!-- GRID DE OBRAS -->
+    <div id="obras-container"></div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p><strong>Les Luthiers</strong> • 1967 - 2017</p>
+      <p>50 años de música y humor</p>
+      <p style="margin-top: 1rem; font-size: 0.9rem;">
+        Sitio creado como homenaje • Contenido original © Les Luthiers
+      </p>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="../js/app.js"></script>
+  <script>
+    async function init() {
+      const respaldo = await LesLuthiers.cargarRespaldo('..');
+      if (!respaldo) return;
+
+      LesLuthiers.activarNavegacion();
+      LesLuthiers.initStickyNav();
+
+      // Obtener todas las obras
+      const obras = Object.values(respaldo.obras || {});
+
+      // Actualizar contador
+      document.getElementById('contador-obras').textContent =
+        `${obras.length} Obras`;
+
+      // Renderizar todas las obras
+      LesLuthiers.renderizarGrid(obras, 'Obra', '.', 'obras-container');
+
+      // Búsqueda local
+      const searchInput = document.getElementById('search-input');
+      const searchResults = document.getElementById('search-results');
+
+      searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.trim().toLowerCase();
+
+        if (query.length < 2) {
+          searchResults.classList.remove('active');
+          searchResults.innerHTML = '';
+          document.getElementById('obras-container').style.display = 'block';
+          return;
+        }
+
+        const resultados = obras.filter(obra =>
+          obra.titulo.toLowerCase().includes(query) ||
+          obra.contenido.toLowerCase().includes(query)
+        );
+
+        if (resultados.length > 0) {
+          document.getElementById('obras-container').style.display = 'none';
+          LesLuthiers.renderizarGrid(resultados, 'Obra', '.', 'search-results');
+          searchResults.classList.add('active');
+        } else {
+          searchResults.innerHTML = `
+            <div class="card">
+              <div class="card-body">
+                <p>No se encontraron obras con "<strong>${query}</strong>"</p>
+              </div>
+            </div>
+          `;
+          searchResults.classList.add('active');
+          document.getElementById('obras-container').style.display = 'none';
+        }
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', init);
+  </script>
+</body>
+
+</html>

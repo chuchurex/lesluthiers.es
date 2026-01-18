@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hugo Domínguez - Les Luthiers</title>
+  <meta name="description" content="Biografía de Hugo Domínguez, integrante de Les Luthiers">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+      <!-- HEADER -->
+  <header class="header">
+    <div class="header-container">
+      <h1>
+        <img src="../assets/portada/cellato.gif" alt="Logo Animado" style="height: 48px; vertical-align: middle; margin-right: 12px; filter: invert(1);">
+        La página de Les Luthiers de Patrick
+      </h1>
+      <p>50 años de música, humor y admiración</p>
+    </div>
+  </header>
+
+  <!-- NAVEGACIÓN -->
+  <nav class="nav">
+    <div class="nav-container">
+      <!-- BRAND (Oculto inicialmente, aparece al scroll) -->
+      <a href="../index.html" class="nav-brand">
+         <img src="../assets/portada/cellato.gif" alt="Logo" class="nav-logo">
+         <span class="nav-title">La página de Les Luthiers de Patrick</span>
+      </a>
+
+      <!-- LINKS -->
+      <a href="../index.html">Inicio</a>
+      <a href="../grupo/index.html">El Grupo</a>
+      <a href="../espectaculos/index.html">Espectáculos</a>
+      <a href="../obras/index.html">Obras</a>
+      <a href="../multimedia/index.html">Multimedia</a>
+      <a href="../instrumentos/index.html">Instrumentos</a>
+      <a href="../personajes/index.html">Personajes</a>
+    </div>
+  </nav>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="container">
+    <!-- BREADCRUMB -->
+    <div class="mb-2">
+      <a href="../index.html">Inicio</a> →
+      <a href="../grupo/index.html">El Grupo</a> →
+      <strong>Hugo Domínguez</strong>
+    </div>
+
+    <!-- DETALLE -->
+    <article class="detail-hero">
+      <img src="https://web.archive.org/web/20170606000000/http://lesluthiers.es/componente12.jpg" alt="Hugo Domínguez" class="detail-hero-image">
+      <div class="detail-content">
+        <h1 class="detail-title">Hugo Domínguez</h1>
+
+        <div class="detail-meta">
+          <span class="meta-item">👥 Integrante</span>
+          <span class="meta-item">📷 1 imagen</span>
+        </div>
+
+        <div class="detail-text">
+          Hugo Domínguez
+Hugo
+Domínguez
+Hugo
+Domínguez nació en Buenos Aires el 24 de enero de 1946.
+Desde
+muy joven su vocación por la investigación en la ciencia y
+la tecnología marca un camino de realizaciones a partir del diseño
+de máquinas, dispositivos, matrices y productos diversos. Asimismo,
+experimentó con la acústica y la música, lo que, sumado
+a su pasión por el jazz, lo llevaron a pertenecer a diversas bandas
+de jazz en las que interpretó, además de la tuba, instrumentos
+fabricados por él mismo. Desde ese momento construyó una variedad
+de instrumentos informales.
+Esa
+experiencia le sirvió para recibir el encargo de ocuparse del taller
+de instrumentos informales desde 1997 (Iraldi había fallecido a finales
+de 1995); desde entonces fue luthier de Les Luthiers, lo que significa no
+solo idear nuevos instrumentos, sino también mantener todos en buen
+estado, algo que lleva no poco trabajo.
+        </div>
+
+        <!-- Galería de imágenes -->
+        
+      </div>
+    </article>
+
+    <!-- NAVEGACIÓN INFERIOR -->
+    <div class="mt-3 text-center">
+      <a href="../grupo/index.html" style="display: inline-block; padding: 1rem 2rem; background: var(--primary); color: white; border-radius: 8px; font-weight: 600;">
+        ← Volver a El Grupo
+      </a>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p><strong>Les Luthiers</strong> • 1967 - 2017</p>
+      <p>50 años de música y humor</p>
+      <p style="margin-top: 1rem; font-size: 0.9rem;">
+        Sitio creado como homenaje • Contenido original © Les Luthiers
+      </p>
+    </div>
+  </footer>
+
+  <script src="../js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      LesLuthiers.activarNavegacion();
+      LesLuthiers.initStickyNav();
+    });
+  </script>
+</body>
+</html>

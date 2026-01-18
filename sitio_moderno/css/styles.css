@@ -1,0 +1,726 @@
+/* ==================================================================
+   SISTEMA DE DISEÑO - LES LUTHIERS (MUSEO DIGITAL)
+   Estética sofisticada, minimalista y legible.
+   ================================================================== */
+
+:root
+{
+  /* Paleta "Editorial High-Contrast" (AA+ Compliant) */
+  /* Fondo Predominante */
+  --bg-body: #689901;
+  /* Verde Patrick */
+  --bg-surface: #FFFFFF;
+  /* Blanco puro */
+  --bg-subtle: #F2F5ED;
+  /* Neutro cálido muy claro */
+
+  /* Texto */
+  --text-primary: #0A1F00;
+  /* Verde Noche Profundo (Casi negro) - Alto contraste sobre blanco Y verde */
+  --text-secondary: #3D4035;
+  /* Charcoal verdoso */
+  --text-muted: #5C6155;
+  /* Piedra */
+
+  /* Acentos */
+  --accent-primary: #000000;
+  /* Negro para máxima definición en acciones */
+  --accent-secondary: #8E3E00;
+  /* Bronce quemado (accesible sobre blanco) */
+  --divider: #E0E0E0;
+
+  /* Sombras (Más nítidas para estilo gráfico) */
+  --shadow-sm: 0 1px 0 rgba(0, 0, 0, 0.1);
+  --shadow-md: 4px 4px 0 rgba(0, 0, 0, 0.1);
+  /* Sombra dura "Brutalista sutil" */
+  --shadow-lg: 8px 8px 0 rgba(0, 0, 0, 0.15);
+  --glass: #FFFFFF;
+  /* Sin transparencia para asegurar contraste */
+  --blur: none;
+
+  /* Tipografía */
+  --font-serif: 'Playfair Display', Times, serif;
+  --font-sans: 'Inter', Helvetica, sans-serif;
+
+  /* Sistema de Espaciado */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 6rem;
+
+  /* Radio de borde */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  /* Bordes más rectos para estilo editorial */
+}
+
+/* ==================================================================
+   RESET Y BASE
+   ================================================================== */
+
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html
+{
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body
+{
+  font-family: var(--font-sans);
+  color: var(--text-primary);
+  background-color: var(--bg-body);
+  /* Patrón de ruido sutil para textura "papel" */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ==================================================================
+   TIPOGRAFÍA
+   ================================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+{
+  font-family: var(--font-serif);
+  line-height: 1.1;
+  margin-bottom: var(--space-sm);
+  color: var(--text-primary);
+  font-weight: 700;
+  /* Pesos más fuertes para legibilidad */
+}
+
+h1
+{
+  font-size: 4rem;
+  letter-spacing: -0.03em;
+}
+
+h2
+{
+  font-size: 2.5rem;
+  letter-spacing: -0.02em;
+}
+
+h3
+{
+  font-size: 1.75rem;
+}
+
+h4
+{
+  font-size: 1.25rem;
+}
+
+p
+{
+  margin-bottom: var(--space-sm);
+  max-width: 70ch;
+}
+
+a
+{
+  color: inherit;
+  text-decoration: underline;
+  /* Subrayado por defecto para accesibilidad */
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  transition: all 0.2s ease;
+}
+
+a:hover
+{
+  color: var(--text-primary);
+  background-color: rgba(255, 255, 255, 0.2);
+  text-decoration-thickness: 2px;
+}
+
+/* ==================================================================
+   LAYOUT FULL WIDTH
+   ================================================================== */
+
+.container
+{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.section-full
+{
+  width: 100%;
+  padding: var(--space-lg) 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bg-green
+{
+  background-color: var(--bg-body);
+  color: var(--text-primary);
+}
+
+.bg-white
+{
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  border-top: 1px solid var(--divider);
+  border-bottom: 1px solid var(--divider);
+}
+
+.bg-green .detail-text,
+.bg-green h2,
+.bg-green p,
+.bg-green h3
+{
+  color: var(--text-primary);
+}
+
+.row-content
+{
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 var(--space-md);
+}
+
+
+
+/* ==================================================================
+/* ==================================================================
+   HEADER & NAVEGACIÓN
+   ================================================================== */
+
+.header
+{
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  padding: var(--space-md) 0;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  z-index: 1001;
+}
+
+.header h1
+{
+  color: var(--text-primary);
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+}
+
+.header h1 img
+{
+  filter: none !important;
+}
+
+.header h1 img[src*="cellato.gif"]
+{
+  filter: invert(1) !important;
+}
+
+.header p
+{
+  color: var(--text-secondary);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin: 0.5rem auto 0;
+}
+
+.nav
+{
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--divider);
+  border-top: 1px solid var(--divider);
+  margin: 0;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.nav-container
+{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-md);
+  overflow-x: auto;
+  min-height: 3.5rem;
+  position: relative;
+}
+
+/* Marca oculta por defecto en el menú (aparece al scroll) */
+.nav-brand
+{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-20px);
+  transition: all 0.3s ease;
+  position: absolute;
+  left: var(--space-md);
+  height: 100%;
+}
+
+.nav-brand img
+{
+  height: 32px;
+  width: auto;
+  filter: invert(1);
+}
+
+.nav-brand span
+{
+  font-family: var(--font-serif);
+  font-weight: 700;
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  white-space: nowrap;
+  display: none;
+  /* Oculto en móbile por defecto */
+}
+
+@media (min-width: 1024px)
+{
+  .nav-brand span
+  {
+    display: block;
+  }
+}
+
+/* ESTADO SCROLLED: La clase .scrolled se añade con JS */
+.nav.scrolled .nav-brand
+{
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0);
+}
+
+.nav.scrolled .nav-container
+{
+  /* Cuando aparece la marca, aseguramos que los links no se monten? 
+     O simplemente dejamos que el brand flote a la izquierda.
+     Si el menú es muy ancho, podría solaparse. 
+     Para MVP, asumimos que caben. */
+}
+
+.nav a:not(.nav-brand)
+{
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  padding: 1rem 0.5rem;
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.nav a:not(.nav-brand):hover,
+.nav a:not(.nav-brand).active
+{
+  color: var(--text-primary);
+  background-color: transparent;
+  border-bottom-color: var(--accent-secondary);
+}
+
+/* ==================================================================
+   HERO & BÚSQUEDA (SECCIÓN SUPERIOR)
+   ================================================================== */
+
+main.container
+{
+  padding-top: var(--space-lg);
+  padding-bottom: var(--space-lg);
+}
+
+.detail-hero
+{
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+.detail-title
+{
+  font-size: 3rem;
+  margin-bottom: var(--space-md);
+}
+
+.detail-text
+{
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin: 0 auto var(--space-sm);
+}
+
+/* Búsqueda rediseñada para ser minimalista */
+.search-section
+{
+  max-width: 600px;
+  margin: 0 auto var(--space-xl);
+  text-align: center;
+}
+
+.search-container
+{
+  position: relative;
+}
+
+.search-input
+{
+  width: 100%;
+  padding: 1rem 1.5rem 1rem 3rem;
+  font-size: 1rem;
+  border: 1px solid var(--divider);
+  border-radius: var(--radius-lg);
+  background-color: var(--bg-surface);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+  font-family: var(--font-sans);
+}
+
+.search-input:focus
+{
+  outline: none;
+  border-color: var(--text-muted);
+  box-shadow: var(--shadow-md);
+}
+
+.search-icon
+{
+  position: absolute;
+  left: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+/* ==================================================================
+   GRID & CARDS
+   ================================================================== */
+
+.grid
+{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+.card
+{
+  background: var(--bg-surface);
+  border: 1px solid var(--divider);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card:hover
+{
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: transparent;
+}
+
+.card-image-wrapper
+{
+  width: 100%;
+  padding-top: 60%;
+  /* Aspect ratio 5:3 */
+  position: relative;
+  background-color: var(--bg-subtle);
+  overflow: hidden;
+}
+
+.card-image
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .card-image
+{
+  transform: scale(1.05);
+  /* Zoom sutil */
+}
+
+.card-body
+{
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-tags
+{
+  margin-bottom: var(--space-xs);
+}
+
+.tag
+{
+  display: inline-block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  color: var(--accent-secondary);
+}
+
+.card-title
+{
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+  /* Evitar huérfanos */
+  text-wrap: balance;
+}
+
+.card-text
+{
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+
+/* ==================================================================
+   ESTADÍSTICAS
+   ================================================================== */
+
+.stats-grid
+{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+  border-top: 1px solid var(--divider);
+  border-bottom: 1px solid var(--divider);
+  padding: var(--space-md) 0;
+}
+
+.stat-card
+{
+  text-align: center;
+  padding: var(--space-sm);
+}
+
+.stat-number
+{
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-family: var(--font-serif);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label
+{
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ==================================================================
+   FOOTER
+   ================================================================== */
+
+.footer
+{
+  background-color: var(--bg-subtle);
+  color: var(--text-secondary);
+  padding: var(--space-lg) 0;
+  text-align: center;
+  border-top: 1px solid var(--divider);
+  margin-top: var(--space-xl);
+}
+
+.footer p
+{
+  margin: 0.5rem 0;
+}
+
+.footer strong
+{
+  color: var(--text-primary);
+}
+
+/* ==================================================================
+   UTILIDADES & ANIMACIONES
+   ================================================================== */
+
+.text-center
+{
+  text-align: center;
+}
+
+.mb-1
+{
+  margin-bottom: var(--space-sm);
+}
+
+.mb-2
+{
+  margin-bottom: var(--space-md);
+}
+
+.mb-3
+{
+  margin-bottom: var(--space-lg);
+}
+
+.fade-in
+{
+  animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn
+{
+  from
+  {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to
+  {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.loading,
+.error
+{
+  text-align: center;
+  padding: var(--space-lg);
+  color: var(--text-secondary);
+  background: var(--bg-subtle);
+  border-radius: var(--radius-md);
+}
+
+/* Highlight para el link de autor */
+/* Highlight para el link de autor */
+.nav a.nav-highlight
+{
+  color: #FFFFFF !important;
+  background-color: var(--text-primary);
+  font-weight: 600;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-md);
+  margin-left: 1rem;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nav a.nav-highlight:hover
+{
+  background-color: var(--accent-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  color: #FFFFFF !important;
+  border-bottom: none;
+}
+
+/* Botones */
+.btn-primary
+{
+  display: inline-block;
+  background-color: var(--text-primary);
+  color: #FFFFFF;
+  padding: 1rem 2.5rem;
+  font-weight: 600;
+  border-radius: 50px;
+  /* Pill shape más amable */
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-md);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  border: none;
+}
+
+.btn-primary:hover
+{
+  background-color: var(--accent-primary);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ==================================================================
+   RESPONSIVE
+   ================================================================== */
+
+@media (max-width: 768px)
+{
+  html
+  {
+    font-size: 14px;
+  }
+
+  .header h1
+  {
+    font-size: 2.5rem;
+  }
+
+  .detail-title
+  {
+    font-size: 2rem;
+  }
+
+  .nav-container
+  {
+    justify-content: flex-start;
+    /* Permitir scroll horizontal en móviles */
+  }
+}
