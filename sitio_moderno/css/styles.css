@@ -544,7 +544,7 @@ a:hover
   right: 0;
   bottom: 0;
   /* Sepia-toned overlay */
-  background: linear-gradient(135deg, rgba(112, 66, 20, 0.85) 0%, rgba(45, 30, 15, 0.90) 100%);
+  background: linear-gradient(135deg, rgba(112, 66, 20, 0.85) 0%, rgba(45, 30, 15, 0.30) 100%);
   z-index: 1;
 }
 
