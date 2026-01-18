@@ -249,7 +249,7 @@ a:hover
 .walking-character
 {
   position: absolute;
-  bottom: 10%;
+  bottom: 0;
   right: -150px;
   /* Empieza fuera de la pantalla */
   height: 120px;
@@ -287,12 +287,12 @@ a:hover
 
   25%
   {
-    transform: rotate(5deg);
+    transform: rotate(2deg);
   }
 
   75%
   {
-    transform: rotate(-5deg);
+    transform: rotate(-2deg);
   }
 }
 
