@@ -163,6 +163,13 @@ h6
     gap: var(--space-xs);
     flex-wrap: wrap;
     padding-top: 20px;
+    margin-left: 60px;
+    /* Espacio para imagen izquierda */
+  }
+
+  .nav-brand-right
+  {
+    display: none;
   }
 
   .nav a:not(.nav-brand)
