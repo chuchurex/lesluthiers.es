@@ -321,6 +321,84 @@ a:hover
   margin-top: var(--space-md);
 }
 
+/* ==================================================================
+   EDITORIAL SECTION (LA COLUMNA DE PATRICK)
+   ================================================================== */
+
+.editorial-section
+{
+  min-height: 200px;
+  padding: var(--space-xl) 0;
+}
+
+.editorial-wrapper
+{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.editorial-label
+{
+  font-family: var(--font-serif);
+  font-size: 4rem;
+  font-weight: 700;
+  color: #7A8FA3;
+  /* Azul-gris de bajo contraste */
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  position: absolute;
+  left: 0;
+  transform: translateX(-100%) translateX(-2rem);
+  white-space: nowrap;
+  opacity: 0.6;
+}
+
+/* Solo mostrar EDITORIAL label en pantallas muy anchas (>1700px) */
+@media (max-width: 1700px)
+{
+  .editorial-label
+  {
+    display: none;
+  }
+}
+
+.editorial-content
+{
+  width: 100%;
+  text-align: center;
+}
+
+.editorial-link
+{
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-decoration: none;
+  display: inline-block;
+  padding: 1rem 2rem;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.editorial-link:hover
+{
+  color: #3A4A58;
+  border-bottom-color: #3A4A58;
+}
+
+@media (max-width: 768px)
+{
+  .editorial-link
+  {
+    font-size: 1.25rem;
+  }
+}
+
 
 
 /* ==================================================================
