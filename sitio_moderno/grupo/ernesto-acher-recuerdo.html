@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>En Recuerdo de Ernesto Acher - Les Luthiers</title>
+  <meta name="description" content="Homenaje a Ernesto Acher (1947-2025), componente de Les Luthiers desde 1971 hasta 1986.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    .memorial-hero {
+      background-color: #1A202C;
+      color: #FFFFFF;
+      padding: var(--space-xl) 0;
+      text-align: center;
+    }
+
+    .memorial-hero h1 {
+      font-family: var(--font-serif);
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: var(--space-sm);
+    }
+
+    .memorial-dates {
+      font-size: 1.25rem;
+      color: #7A8FA3;
+      letter-spacing: 0.1em;
+    }
+
+    .memorial-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: var(--space-xl) var(--space-md);
+    }
+
+    .memorial-content p {
+      font-size: 1.125rem;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      margin-bottom: var(--space-md);
+    }
+
+    .memorial-content p:first-of-type::first-letter {
+      font-family: var(--font-serif);
+      font-size: 4rem;
+      float: left;
+      line-height: 1;
+      margin-right: 0.5rem;
+      color: var(--text-primary);
+    }
+
+    .memorial-quote {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      font-style: italic;
+      color: var(--text-primary);
+      border-left: 4px solid var(--accent-secondary);
+      padding-left: var(--space-md);
+      margin: var(--space-lg) 0;
+    }
+
+    .memorial-signature {
+      text-align: right;
+      font-style: italic;
+      color: var(--text-muted);
+      margin-top: var(--space-lg);
+    }
+
+    @media (max-width: 768px) {
+      .memorial-hero h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-container">
+      <h1>
+        <img src="../assets/portada/cellato.gif" alt="Logo Animado" style="height: 48px; vertical-align: middle; margin-right: 12px; filter: invert(1);">
+        La página de Les Luthiers de Patrick
+      </h1>
+      <p>50 años de música, humor y admiración</p>
+    </div>
+  </header>
+
+  <!-- NAVEGACIÓN -->
+  <nav class="nav">
+    <!-- BRAND (Pegado a la izquierda, fuera del container) -->
+    <a href="../index.html" class="nav-brand">
+      <img src="../assets/portada/cellato.gif" alt="Logo" class="nav-logo">
+      <span class="nav-title">La página de Les Luthiers de Patrick</span>
+    </a>
+
+    <!-- CONTAINER CENTRADO PARA LINKS -->
+    <div class="nav-container">
+      <div class="nav-links">
+        <a href="../index.html">Inicio</a>
+        <a href="../grupo/index.html">El Grupo</a>
+        <a href="../espectaculos/index.html">Espectáculos</a>
+        <a href="../obras/index.html">Obras</a>
+        <a href="../multimedia/index.html">Multimedia</a>
+        <a href="../instrumentos/index.html">Instrumentos</a>
+        <a href="../personajes/index.html">Personajes</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MEMORIAL HERO -->
+  <section class="memorial-hero">
+    <h1>Ernesto Acher</h1>
+    <p class="memorial-dates">1947 – 2025</p>
+  </section>
+
+  <!-- MEMORIAL CONTENT -->
+  <main class="memorial-content">
+    <p>
+      Ernesto Acher falleció el 12 de diciembre de 2025, en Buenos Aires, donde había regresado en 2016 tras bastantes años de residencia en Chile. Fue componente de Les Luthiers desde 1971 hasta 1986, en opinión de muchos los mejores años del grupo.
+    </p>
+
+    <p>
+      Arquitecto de profesión, músico de gran talento, en Les Luthiers ejerció todas las labores creativas con gran eficacia; tal vez solo lo podemos comparar con Carlos Núñez Cortés o con el mismísimo fundador, Gerardo Masana, en cuanto a su amplitud de miras y asombrosas capacidades múltiples.
+    </p>
+
+    <blockquote class="memorial-quote">
+      "Repetir una fórmula de éxito postergando la creatividad le parecía poco interesante. Cerró un ciclo y abrió otros en su vida."
+    </blockquote>
+
+    <p>
+      En una entrevista reciente vino a despejar la sempiterna cuestión del porqué de su marcha del grupo: repetir una fórmula de éxito postergando la creatividad le parecía poco interesante. Cerró un ciclo y abrió otros en su vida, La Banda Elástica fue el primero de ellos.
+    </p>
+
+    <p>
+      Lo perdimos aproximadamente cinco años después de la muerte de Marcos Mundstock, y diez de la de Daniel Rabinovich.
+    </p>
+
+    <p class="memorial-signature">
+      — La página de Les Luthiers de Patrick
+    </p>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p><strong>La página de Les Luthiers de Patrick</strong></p>
+      <p>28 años preservando el legado (1998-2026)</p>
+    </div>
+  </footer>
+
+  <script src="../js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      if (window.LesLuthiers && window.LesLuthiers.initStickyNav) {
+        LesLuthiers.initStickyNav();
+      }
+    });
+  </script>
+</body>
+
+</html>
