@@ -399,6 +399,94 @@ a:hover
   }
 }
 
+/* ==================================================================
+   WEB DECANA SECTION (28 AÑOS)
+   ================================================================== */
+
+.decana-section
+{
+  min-height: 345px;
+  position: relative;
+  background-color: #2D3748;
+  /* Fallback color (gris oscuro nostálgico) */
+  background-image: url('../assets/backgrounds/icq_messenger_background.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.decana-overlay
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(45, 55, 72, 0.92) 0%, rgba(26, 32, 44, 0.88) 100%);
+  z-index: 1;
+}
+
+.decana-content
+{
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.decana-title
+{
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #7A8FA3;
+  margin-bottom: var(--space-sm);
+}
+
+.decana-years
+{
+  font-family: var(--font-serif);
+  font-size: 6rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #FFFFFF;
+  margin: 0;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.decana-dates
+{
+  font-family: var(--font-sans);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #60D156;
+  /* Verde ICQ clásico */
+  letter-spacing: 0.2em;
+  margin-top: var(--space-xs);
+}
+
+@media (max-width: 768px)
+{
+  .decana-years
+  {
+    font-size: 3.5rem;
+  }
+
+  .decana-title
+  {
+    font-size: 1rem;
+  }
+
+  .decana-dates
+  {
+    font-size: 1rem;
+  }
+}
+
 
 
 /* ==================================================================
