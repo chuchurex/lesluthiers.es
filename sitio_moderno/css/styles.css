@@ -105,6 +105,26 @@ h6
   /* Pesos más fuertes para legibilidad */
 }
 
+/* Header Logos */
+.header-logo-left,
+.header-logo-right
+{
+  height: 48px;
+  width: auto;
+  vertical-align: middle;
+  filter: invert(1);
+}
+
+.header-logo-left
+{
+  margin-right: 12px;
+}
+
+.header-logo-right
+{
+  margin-left: 12px;
+}
+
 h1
 {
   font-size: 4rem;
@@ -729,14 +749,24 @@ a:hover
   text-decoration: none;
   opacity: 0;
   pointer-events: none;
-  transform: translateX(-20px);
   transition: all 0.3s ease;
   position: absolute;
-  left: 1rem;
-  /* Alineado al borde de pantalla */
-  top: 0;
   height: 100%;
   z-index: 20;
+}
+
+/* Brand Izquierda - Glamocot + Title */
+.nav-brand-left
+{
+  left: 1rem;
+  transform: translateX(-20px);
+}
+
+/* Brand Derecha - Cellato flotando */
+.nav-brand-right
+{
+  right: 1rem;
+  transform: translateX(20px);
 }
 
 .nav-brand img
@@ -786,12 +816,7 @@ a:hover
 }
 
 .nav.scrolled .nav-container
-{
-  /* Cuando aparece la marca, aseguramos que los links no se monten? 
-     O simplemente dejamos que el brand flote a la izquierda.
-     Si el menú es muy ancho, podría solaparse. 
-     Para MVP, asumimos que caben. */
-}
+{}
 
 .nav a:not(.nav-brand)
 {
