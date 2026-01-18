@@ -210,6 +210,8 @@ a:hover
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .section-title-small
@@ -249,7 +251,7 @@ a:hover
 .walking-character
 {
   position: absolute;
-  bottom: 160px;
+  bottom: 0;
   right: -150px;
   /* Empieza fuera de la pantalla */
   height: 120px;
