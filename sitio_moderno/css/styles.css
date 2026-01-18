@@ -313,17 +313,17 @@ a:hover
   display: none;
 }
 
-@media (min-width: 1400px)
+@media (min-width: 1420px)
 {
 
-  /* Mostrar texto solo si hay espacio seguro fuera del container de 1200px */
+  /* Mostrar texto solo si hay espacio seguro fuera del container de 1200px + 20px extra */
   .nav-brand span
   {
     display: block;
   }
 }
 
-@media (min-width: 1024px) and (max-width: 1399px)
+@media (min-width: 1024px) and (max-width: 1419px)
 {
 
   /* En pantallas medianas, solo mostrar Icono para no pisar links */
