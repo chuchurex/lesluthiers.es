@@ -244,6 +244,60 @@ a:hover
   }
 }
 
+/* Updates - Ernesto Acher News */
+.update-highlight
+{
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 var(--space-xs);
+  text-transform: uppercase;
+}
+
+.update-date
+{
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  color: #7A8FA3;
+  letter-spacing: 0.1em;
+  margin: 0 0 var(--space-md);
+}
+
+.update-link
+{
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color 0.2s ease;
+}
+
+.update-link:hover
+{
+  color: #3A4A58;
+}
+
+@media (max-width: 768px)
+{
+  .update-highlight
+  {
+    font-size: 2rem;
+  }
+}
+
+/* Editorial Intro */
+.editorial-intro
+{
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-md);
+  max-width: 600px;
+}
+
 /* ==================================================================
    WALKING CHARACTER ANIMATION
    ================================================================== */
