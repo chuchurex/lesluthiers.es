@@ -518,22 +518,28 @@ a:hover
   }
 }
 
-/* ==================================================================
-   WEB DECANA SECTION (28 AÑOS)
-   ================================================================== */
-
-.decana-section
+/* Text section - dark background */
+.decana-section-text
 {
-  min-height: 345px;
+  min-height: 200px;
+  position: relative;
+  background-color: #1A202C;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-lg) 0;
+}
+
+/* Image section - 98.png background */
+.decana-section-image
+{
+  min-height: 336px;
   position: relative;
   background-color: #2D3748;
   background-image: url('../assets/backgrounds/98.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .decana-overlay
@@ -544,7 +550,7 @@ a:hover
   right: 0;
   bottom: 0;
   /* Sepia-toned overlay */
-  background: linear-gradient(135deg, rgba(112, 66, 20, 0.85) 0%, rgba(45, 30, 15, 0.30) 100%);
+  background: linear-gradient(135deg, rgba(112, 66, 20, 0.30) 0%, rgba(45, 30, 15, 0.30) 100%);
   z-index: 1;
 }
 
