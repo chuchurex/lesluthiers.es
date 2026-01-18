@@ -17,29 +17,34 @@
 </head>
 
 <body>
-  <!-- HEADER -->
+    <!-- HEADER -->
   <header class="header">
     <div class="header-container">
       <h1>
-        <img src="../assets/portada/cellato.gif" alt="Logo Animado" style="height: 48px; vertical-align: middle; margin-right: 12px; filter: invert(1);">
+        <img src="../portada/glamocot.png" alt="Glamocot" class="header-logo-left">
         La página de Les Luthiers de Patrick
+        <img src="../portada/cellato.gif" alt="Cellato" class="header-logo-right">
       </h1>
       <p>50 años de música, humor y admiración</p>
     </div>
   </header>
 
-  <!-- NAVEGACIÓN -->
-  <nav class="nav">
-    <!-- BRAND (Pegado a la izquierda, fuera del container) -->
-    <a href="../index.html" class="nav-brand">
-       <img src="../assets/portada/cellato.gif" alt="Logo" class="nav-logo">
-       <span class="nav-title">La página de Les Luthiers de Patrick</span>
+    <!-- NAVEGACIÓN -->
+  <nav class="nav" id="main-nav">
+    <!-- BRAND IZQUIERDA (aparece al scroll) -->
+    <a href="../index.html" class="nav-brand nav-brand-left">
+      <img src="../portada/glamocot.png" alt="Logo" class="nav-logo">
+      <span class="nav-title">La página de Les Luthiers de Patrick</span>
     </a>
+
+    <!-- BRAND DERECHA - Cellato flotando (aparece al scroll) -->
+    <div class="nav-brand nav-brand-right">
+      <img src="../portada/cellato.gif" alt="Cellato" class="nav-logo">
+    </div>
 
     <!-- CONTAINER CENTRADO PARA LINKS -->
     <div class="nav-container">
       <div class="nav-links">
-        <a href="../index.html">Inicio</a>
         <a href="../grupo/index.html">El Grupo</a>
         <a href="../espectaculos/index.html">Espectáculos</a>
         <a href="../obras/index.html">Obras</a>

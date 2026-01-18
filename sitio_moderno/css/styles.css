@@ -125,6 +125,51 @@ h6
   margin-left: 12px;
 }
 
+@media (max-width: 768px)
+{
+  .header-logo-left,
+  .header-logo-right
+  {
+    display: inline-block;
+    height: 32px;
+    /* Reducir altura para móvil */
+    width: 32px;
+    /* Ancho fijo igual para ambos */
+    object-fit: contain;
+    margin: 0 4px;
+    /* Margen reducido */
+  }
+
+  h1
+  {
+    font-size: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/* ==================================================================
+   NAVEGACIÓN MOBIL
+   ================================================================== */
+@media (max-width: 768px)
+{
+  .nav-links
+  {
+    justify-content: center;
+    /* Centrar items del menú */
+    gap: var(--space-xs);
+    flex-wrap: wrap;
+  }
+
+  .nav a:not(.nav-brand)
+  {
+    font-size: 0.85rem;
+    padding: 0.5rem;
+  }
+}
+
 h1
 {
   font-size: 4rem;
