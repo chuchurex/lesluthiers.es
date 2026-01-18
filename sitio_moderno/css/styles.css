@@ -487,6 +487,36 @@ a:hover
   }
 }
 
+/* ==================================================================
+   DISCLAIMER SECTION
+   ================================================================== */
+
+.disclaimer-section
+{
+  padding: var(--space-lg) 0;
+}
+
+.disclaimer-highlight
+{
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.disclaimer-text
+{
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
 
 
 /* ==================================================================
