@@ -1,0 +1,7 @@
+# Cloudflare Pages - Redirects y rewrites
+
+# Manejo de 404 - mostrar la página de inicio
+/* /index.html 200
+
+# Si tuvieras redirecciones específicas, agregarlas arriba, por ejemplo:
+# /old-page /new-page 301
