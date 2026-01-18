@@ -527,10 +527,10 @@ a:hover
   min-height: 345px;
   position: relative;
   background-color: #2D3748;
-  /* Fallback color (gris oscuro nostálgico) */
-  background-image: url('../assets/backgrounds/icq_messenger_background.png');
+  background-image: url('../assets/backgrounds/98.png');
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -543,7 +543,8 @@ a:hover
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(45, 55, 72, 0.92) 0%, rgba(26, 32, 44, 0.88) 100%);
+  /* Sepia-toned overlay */
+  background: linear-gradient(135deg, rgba(112, 66, 20, 0.85) 0%, rgba(45, 30, 15, 0.90) 100%);
   z-index: 1;
 }
 
